@@ -7,7 +7,7 @@
 - clk, rst, SW 為 input 訊號
 - CA~CG, AN 為 output 訊號
     - 由 SW 來控制欲顯示的大小
-    - CA~CG 來控制顯示 0~9 哪個數字
+    - `CA~CG` 來控制顯示 `0~9` 哪個數字
     - AN 來控制要亮哪一個七段顯示器
 - 由於我 lab3 是把 input放在 `MEM.DM[0]` 的位置，所以我把 SW的訊號傳到 MEMORY.v
 - 因為要用七段顯示器顯示答案，故多寫一個 module top，把最後算完的結果(`MEM.DM[1]`,`MEM.DM[2]`)丟過去
