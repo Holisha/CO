@@ -8,3 +8,4 @@
 - f 可以當成 way = max_idx
 - 需要再改進 coding style
 - 寫成 標頭檔?
+- 或是 replace policy 寫成一個函式
