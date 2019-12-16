@@ -1,5 +1,10 @@
 # CO
 
+## lab 4
+
+- NEXYS4DDR
+- 基本上與 lab3 雷同
+
 ## lab 5
 
 ### Cache simulator
