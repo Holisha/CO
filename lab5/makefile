@@ -1,4 +1,4 @@
 all:
-	gcc -o cache -O3 hw5.c
+	gcc -o cache lab5.c cache.c replace_policy.c -O3
 clean:
 	rm cache
