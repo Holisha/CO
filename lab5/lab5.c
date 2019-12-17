@@ -56,7 +56,6 @@ int main(int argc, char** argv){
     printf("Bytes from memory = %lu\n",ANS.from_memory * block_size);
     printf("Bytes to memory = %lu\n", ANS.to_memory * block_size);
 
-    //printf("%d %d %d %d %d\n", cache_size, block_size, max_idx, way, replace);
     fclose(trace);
     return 0;
 }
