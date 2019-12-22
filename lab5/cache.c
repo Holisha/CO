@@ -86,5 +86,14 @@ void dirty_check(int way, int max_idx){
             if(cache[i][j].dirty == 1)
                 ANS.to_memory++;
     }
+}
 
+void cache_free(int way, int max_idx){
+    int i, j;
+
+    for(i = 0; i < way; i++){
+        for(j = 0; j < max_idx; j++){
+            free(cache[i]);
+        }
+    }
 }
