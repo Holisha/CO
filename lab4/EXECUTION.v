@@ -44,7 +44,7 @@ output reg [31:0] XM_MD;
 //set pipeline register
 always @(posedge clk or posedge rst)
 begin
-	if(rst) begin //??å?‹å??
+	if(rst) begin //??ï¿½ï¿½?ï¿½ï¿½??
 		XM_MemtoReg	<= 1'b0;
 		XM_RegWrite	<= 1'b0;
 		XM_MemRead 	<= 1'b0;
@@ -61,8 +61,8 @@ begin
 		XM_RD 	   	<= DX_RD;
 		XM_MD 	   	<= DX_MD;
 	    XM_branch<=((ALUctr==5) && (A == B) && (DX_branch))? 1'b1: ((ALUctr==6) && (A != B) && (DX_branch))?1'b1:1'b0;
-		XM_BT<=NPC+{ { 15{imm[15]}}, imm, 2'b0};  //Branch Target = ?•¶??ç?„PC?? + ?›¸å°ä?å? (EX. beq??‡ä»¤)
-		//beq??‡ä»¤?œ¨"execution"ä¸­æ???è¦ç?„è¨­å®šå…¶å¯¦å¤§å¤šéƒ½å®Œæ?ä?†ï?Œå?„ä?å¯ä»¥å?ƒé–±ä¸Šæ–¹?…©è¡Œæ?‡ä»¤?‚ä?†ä?‹æ–¹ALUout??„æ˜¯è¨˜å?—è?çµ¦?‹å?¼ï?Œä?‹å?‚ï??0
+		XM_BT<=NPC+{ { 15{imm[15]}}, imm, 2'b0};  //Branch Target = ç•¶å‰çš„PCå€¼ + ç›¸å°ä½å€ (EX. beqæŒ‡ä»¤)
+		//beqæŒ‡ä»¤åœ¨"execution"ä¸­æ‰€éœ€è¦çš„è¨­å®šå…¶å¯¦å¤§å¤šéƒ½å®Œæˆäº†ï¼Œå„ä½å¯ä»¥åƒé–±ä¸Šæ–¹å…©è¡ŒæŒ‡ä»¤ã€‚ä½†ä¸‹æ–¹ALUouté‚„æ˜¯è¨˜å¾—è¦çµ¦å€‹å€¼ï¼Œä¾‹å¦‚ï¼š0
 	end
 end
 
@@ -73,7 +73,7 @@ begin
    end else begin
    		case(ALUctr)
 			
-		  	3'd0: //add / lw ...  //?œ¨ID??æ®µ??‚å·²ç¶“è§£ç¢¼å‡º??‡ä»¤äº†ï?Œé‚£è©²æ?‡ä»¤??è¦å“ªä¸?ç¨®é?‹ç???
+		  	3'd0: //add / lw ...  //åœ¨IDéšæ®µæ™‚å·²ç¶“è§£ç¢¼å‡ºæŒ‡ä»¤äº†ï¼Œé‚£è©²æŒ‡ä»¤éœ€è¦å“ªä¸€ç¨®é‹ç®—?
 		     	ALUout <= A + B;
 			3'd1: //sub
 				ALUout <= A - B;
