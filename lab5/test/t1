@@ -1,0 +1,9 @@
+Input file = gcc.din
+Demand fetch = 1000002
+Cache hit = 924129
+Cache miss = 75873
+Miss rate = 0.0759
+Read data = 159631
+Write data = 83030
+Bytes from memory = 2427936
+Bytes to memory = 352192
