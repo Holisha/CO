@@ -24,6 +24,8 @@
 ### Cache simulator
 
 - 寫成 .h 檔
+- 把 replacement 跟 label 寫成 switch 來判斷，以增加可讀性
+  - 但判斷次數增加
 - 還有優化空間
 - 有預留新增功能的空間
 - 下次用 python 寫?
