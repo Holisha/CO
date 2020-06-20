@@ -11,7 +11,7 @@
 
 ## lab 3
 
-- 可以考慮加上 forwarding 還算可以理解的範圍
+- ALU 的部分加上 forwarding
 
 ## lab 4
 
