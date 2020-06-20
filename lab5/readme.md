@@ -12,6 +12,8 @@
 
 ## 測資
 
+- 使用 test.sh 來測試以下12組測資
+
 ![](https://i.imgur.com/B83mOSs.png)
 
 ![](https://i.imgur.com/z6LJBwf.png)

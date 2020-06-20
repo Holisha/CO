@@ -7,9 +7,11 @@
 #include "cache.h"
 
 
-void FIFO(int idx, int way){
+void FIFO(int idx, int way, int hit){
     int i;
 
+    if(hit) return;
+    
     for(i = 0; i < way; i++)
         cache[i][idx].priority == 0 ? cache[i][idx].priority = way - 1 : cache[i][idx].priority--;
 }

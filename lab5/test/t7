@@ -1,0 +1,9 @@
+Input file = spice.din
+Demand fetch = 1000001
+Cache hit = 997911
+Cache miss = 2090
+Miss rate = 0.0021
+Read data = 150699
+Write data = 66538
+Bytes from memory = 66880
+Bytes to memory = 14496

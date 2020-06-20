@@ -30,13 +30,17 @@ void cache_init(int way, int max_idx){
 }
 
 void cache_demand(int label, unsigned long block_address, int max_idx, int way, int replace_policy){
-    int i, j;
+    int i, j, hit=0;
     unsigned long tag, idx;
 
-    if(label == 0)
-        ANS.read++;
-    else if(label == 1)
-        ANS.write++;
+    switch(label){
+        case 0:
+            ANS.read++;
+            break;
+        case 1: 
+            ANS.write++;
+            break;
+    }
 
     idx = block_address % max_idx; // cache index
     tag = block_address / max_idx; // cache tag
@@ -48,11 +52,11 @@ void cache_demand(int label, unsigned long block_address, int max_idx, int way, 
             cache[i][idx].tag = tag;
             ANS.from_memory++;
             ANS.miss++;
-            if(replace_policy == 0) FIFO(idx, way);
             break;
         }
         // valid & hit
         else if(cache[i][idx].tag == tag){
+            hit = 1;
             ANS.hit++;
             break;
         }
@@ -70,12 +74,20 @@ void cache_demand(int label, unsigned long block_address, int max_idx, int way, 
         ANS.miss++;
         ANS.from_memory++;
         (label == 1) ? (cache[i][idx].dirty = 1) : (cache[i][idx].dirty = 0);   // mark
-        if(replace_policy == 0) FIFO(idx, way);
     }
     if(label == 1) cache[i][idx].dirty = 1; // mark
-
-    if(replace_policy == 1) LRU(idx, i, way);
     ANS.demand_fetch++;
+
+    // replace policy
+    switch(replace_policy){
+        case 0:
+            FIFO(idx, way, hit);
+            break;
+        case 1:
+            LRU(idx, i, way);
+            break;
+    }
+    
 }
 
 void dirty_check(int way, int max_idx){
